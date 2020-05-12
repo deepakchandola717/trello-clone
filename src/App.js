@@ -1,21 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import AllBoards from './Components/AllBoards/AllBoards';
+import TopNavBar from './Components/TopNavBar/TopNavBar';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AllBoards from './Components/AllBoards';
 
 function App() {
   return (
     <div className="App">
+      <TopNavBar />
       <Router>
-        <Switch> 
-        <Route
-          path="/boards"
-          exact
-          render={() => <AllBoards/>}
-        />
+        <Switch>
+          <Route path="/boards" exact component={AllBoards} />
         </Switch>
       </Router>
-    
+
     </div>
   );
 }
