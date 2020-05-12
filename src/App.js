@@ -9,8 +9,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <TopNavBar />
       <Router>
+        <TopNavBar />
         <Switch>
           <Route path="/boards" exact component={AllBoards} />
           <Route path="/boards/:boardId" exact component={SingleBoard} />
