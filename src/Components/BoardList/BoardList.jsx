@@ -30,7 +30,7 @@ const BoardList = (props) => {
           {listData && listData.name}
         </Typography>
         <Box maxHeight="67vh" overflow="auto">
-          {listCards.map((card) => <ListCard cardData={card} />)}
+          {listCards.map((card) => <ListCard cardData={card} key={card.id} />)}
         </Box>
         <Button size="small" type="button" className={classes.addAnotherCardButton}>
           + Add another card

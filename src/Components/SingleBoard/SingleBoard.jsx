@@ -14,7 +14,6 @@ const SingleBoard = (props) => {
   const getBoardData = (boardId) => {
     getSingleBoard(boardId)
       .then((res) => {
-        console.log('board data', res);
         setBoardData(res);
       })
       .catch((err) => console.log(err));
@@ -23,7 +22,6 @@ const SingleBoard = (props) => {
   const getBoardLists = (boardId) => {
     getListsOnBoard(boardId)
       .then((res) => {
-        console.log('lists', res);
         setBoardLists(res);
       })
       .catch((err) => console.log(err));
@@ -39,7 +37,7 @@ const SingleBoard = (props) => {
       <BoardBar boardData={boardData} />
       <Box width="100vw" height="90vh" overflow="scroll" style={{ backgroundColor: boardData && boardData.prefs.backgroundColor }}>
         <Box display="flex" width="fit-content">
-          {boardLists.map((list) => <BoardList listData={list} />)}
+          {boardLists.map((list) => <BoardList listData={list} key={list.id}/>)}
         </Box>
       </Box>
 
