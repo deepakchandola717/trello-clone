@@ -53,6 +53,9 @@ const useStyles = makeStyles(() => ({
     fontWeight: '700',
     color: '#fff',
   },
+  linkStyle: {
+    textDecoration: 'none',
+  },
 }));
 
 export default useStyles;

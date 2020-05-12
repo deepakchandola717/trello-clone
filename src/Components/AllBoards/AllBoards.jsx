@@ -3,6 +3,7 @@ import {
   Card, Box, CardContent, Typography, Container,
 } from '@material-ui/core';
 
+import { Link } from 'react-router-dom';
 import { getMyBoards } from '../../Services/services';
 
 import useStyles from './AllBoards.styles';
@@ -40,19 +41,21 @@ const AllBoards = () => {
           <Box className={classes.boardsContainer}>
             {allBoards.map((board) => (
               <>
-                <Card
-                  className={classes.board}
-                  style={{
-                    backgroundColor: board.prefs.backgroundColor,
-                    backgroundImage: `url(${board.prefs.backgroundImage})`,
-                  }}
-                >
-                  <CardContent>
-                    <Typography className={classes.boardTitle}>
-                      {board.name}
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <Link to={`/boards/${board.id}`} className={classes.linkStyle}>
+                  <Card
+                    className={classes.board}
+                    style={{
+                      backgroundColor: board.prefs.backgroundColor,
+                      backgroundImage: `url(${board.prefs.backgroundImage})`,
+                    }}
+                  >
+                    <CardContent>
+                      <Typography className={classes.boardTitle}>
+                        {board.name}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Link>
               </>
             ))}
           </Box>

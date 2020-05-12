@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AllBoards from './Components/AllBoards/AllBoards';
 import TopNavBar from './Components/TopNavBar/TopNavBar';
+import SingleBoard from './Components/SingleBoard/SingleBoard';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/boards" exact component={AllBoards} />
+          <Route path="/boards/:boardId" exact component={SingleBoard} />
         </Switch>
       </Router>
 

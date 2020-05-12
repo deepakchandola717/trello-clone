@@ -8,9 +8,16 @@ export const getMyBoards = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-// get all my cards
-export const getMyCards = () => new Promise((resolve, reject) => {
-  crudData(endPoints.myBoards, 'GET')
+// get single board
+export const getSingleBoard = (boardId) => new Promise((resolve, reject) => {
+  crudData(endPoints.singleBoard, 'GET', { id: boardId })
+    .then((res) => res && resolve(res))
+    .catch((err) => reject(err));
+});
+
+// get lists on a board
+export const getListsOnBoard = (boardId) => new Promise((resolve, reject) => {
+  crudData(endPoints.listsOnBoard, 'GET', { id: boardId })
     .then((res) => res && resolve(res))
     .catch((err) => reject(err));
 });
