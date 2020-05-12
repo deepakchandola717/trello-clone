@@ -21,3 +21,10 @@ export const getListsOnBoard = (boardId) => new Promise((resolve, reject) => {
     .then((res) => res && resolve(res))
     .catch((err) => reject(err));
 });
+
+// get cards on a list
+export const getCardsOnList = (boardId) => new Promise((resolve, reject) => {
+  crudData(endPoints.cardsOnList, 'GET', { id: boardId })
+    .then((res) => res && resolve(res))
+    .catch((err) => reject(err));
+});

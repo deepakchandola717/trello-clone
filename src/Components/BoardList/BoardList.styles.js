@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
   listStyle: {
+    height: 'fit-content',
     width: '17rem',
     backgroundColor: '#EBECF0',
     margin: 5,

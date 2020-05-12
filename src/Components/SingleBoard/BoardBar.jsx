@@ -1,17 +1,17 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
-import useStyles from './SingleBoard.styles';
 
 const BoardBar = (props) => {
-  const { boardColor } = props;
+  const { boardData } = props;
   return (
     <>
-      <Box display="flex" position="relative" top="-2rem" width="100vw" height="2rem" alignItems="center" style={{ backgroundColor: '#41AFCC' }}>
+      <Box display="flex" position="relative" width="100vw" height="2rem" alignItems="center" style={{ backgroundColor: boardData && boardData.prefs.backgroundColor }}>
         <Typography style={{
           margin: '2rem', fontSize: '18px', fontWeight: '700', lineHeight: '32px', color: '#fff',
         }}
         >
-          Board Name
+          {boardData && boardData.name}
         </Typography>
       </Box>
     </>

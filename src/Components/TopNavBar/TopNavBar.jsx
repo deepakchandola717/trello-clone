@@ -7,7 +7,7 @@ const TopNavBar = () => {
   const classes = useStyles();
   return (
     <>
-      <Box display="flex" width="100vw" height="2rem" justifyContent="center" marginBottom="2rem" style={{ backgroundColor: '#026AAe' }}>
+      <Box display="flex" width="100vw" height="2rem" justifyContent="center" style={{ backgroundColor: '#026AAe' }}>
         <img className={classes.trelloLogo} src={TrelloLogo} alt="Trello logo" />
       </Box>
     </>

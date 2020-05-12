@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
   pageContainer: {
     display: 'flex',
+    marginTop: '2rem',
   },
   board: {
     width: 195,
