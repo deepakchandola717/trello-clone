@@ -14,11 +14,12 @@ const createQueriedUrl = (url, queries) => {
   let newUrl = url;
 
   //adding API and Client key to query
-  queries= [...queries,{key:config.apiKey},{token:config.clientToken}]
+  let updatedQueries = queries?queries:{}
   
-  Object.keys(queries).forEach((query, index) => {
+  updatedQueries = {...queries, key:config.apiKey ,token:config.clientToken}
+  Object.keys(updatedQueries).forEach((query, index) => {
     newUrl +=
-      index > 0 ? `&${query}=${queries[query]}` : `?${query}=${queries[query]}`;
+      index > 0 ? `&${query}=${updatedQueries[query]}` : `?${query}=${updatedQueries[query]}`;
   });
   return newUrl;
 };
@@ -37,13 +38,13 @@ const crudData = async (
       parameterObject
     );
   }
-  if (queryObject) {
+  
     modifiedApiEndpoint = createQueriedUrl(modifiedApiEndpoint, queryObject);
-  }
+
   try {
     const res = await fetch(config.baseAddress + modifiedApiEndpoint, {
       method,
-      credentials: "include",
+    //   credentials: "include",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(payload)
     });

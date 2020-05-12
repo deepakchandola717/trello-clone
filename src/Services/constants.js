@@ -1,3 +1,3 @@
-export const endPoints= {
+export const endPoints = {
     myBoards:'/members/me/boards',
 }
