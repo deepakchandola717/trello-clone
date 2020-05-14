@@ -4,6 +4,7 @@ import { Box } from '@material-ui/core';
 import BoardBar from './BoardBar';
 import BoardList from '../BoardList/BoardList';
 import { getSingleBoard, getListsOnBoard } from '../../Services/services';
+import CardDialog from '../CardDialog/CardDialog';
 
 const SingleBoard = (props) => {
   // eslint-disable-next-line react/destructuring-assignment
@@ -40,7 +41,6 @@ const SingleBoard = (props) => {
           {boardLists.map((list) => <BoardList listData={list} key={list.id}/>)}
         </Box>
       </Box>
-
     </>
   );
 };
